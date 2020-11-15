@@ -55,14 +55,15 @@
                     <td><%= produk.nama %></td>
                     <td><%= produk.harga %></td>
                     <td>
-                        
+                        <a name="" id="" class="btn btn-warning edit" href="#" role="button" data-id="{{ id }}" data-nama="{{ nama }}" data-harga="{{ harga }}">Edit</a>
+                        <a name="" id="" class="btn btn-danger delete" href="#" role="button" data-id="{{ id }}" data-nama="{{ nama }}" >Hapus</a>
                     </td>
                 </tr>
                 <% }); %>
             </tbody>
         </table>
     </div>
-
+    <!--Tambah Produk modal-->
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -73,20 +74,19 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-
                 <div class="modal-body">
-                    <form>
+                    <form action="/tambah" method="post">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama" required>
+                            <input type="text" class="form-control" name="nama" placeholder="Nama" required>
                         </div>
                         <div class="form-group">
-                            <input type="number" class="form-control" name="harga" id="harga" placeholder="Harga" required>
+                            <input type="number" class="form-control" name="harga" placeholder="Harga" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Simpan</button>
                 </div>
             </div>
         </div>
